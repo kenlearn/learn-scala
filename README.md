@@ -1,5 +1,9 @@
 # Learning Scala
 
+### Books and Resource
+- [Programming Scala](https://www.safaribooksonline.com/library/view/programming-scala/9780596801908/)
+- [Tour of Scala (official)](https://docs.scala-lang.org/tour/tour-of-scala.html)
+
 
 ### first scala
 ```scala
@@ -25,6 +29,10 @@ for (book <- books
 for { book <- books 
     bookval = book.toUpperCase()
 } println(bookval)
+
+// yield
+val scalabooks = for { book <- books 
+    if book.contains("Scala")} yield book
 ```
 
 ### array
@@ -50,3 +58,11 @@ val tuple2 ="title" -> "Beginning Scala"
 
 println(tuple._3) // 3rd element, Scala
 ```
+
+### call by name
+```scala
+def doit(p: => String): Unit = {
+
+}
+```
+[call by name](https://docs.scala-lang.org/tour/by-name-parameters.html)
