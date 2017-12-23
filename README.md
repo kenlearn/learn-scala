@@ -37,6 +37,7 @@ val scalabooks = for { book <- books
 
 ### array
 ```scala
+var books: Array[String] = new Array(5)
 var books = new Array[String](3)
 var fruits = Array("apple", "orange", "grape")
 
@@ -57,6 +58,8 @@ val tuple = (1, false, "Scala")
 val tuple2 ="title" -> "Beginning Scala"
 
 println(tuple._3) // 3rd element, Scala
+
+val (t1, t2, t3) = tuple // unpack tuple to t1,t2,t3
 ```
 
 ### call by name
@@ -66,3 +69,19 @@ def doit(p: => String): Unit = {
 }
 ```
 [call by name](https://docs.scala-lang.org/tour/by-name-parameters.html)
+
+
+### Option, Some, None
+[Option, Sone, None: Avoiding null](https://www.safaribooksonline.com/library/view/programming-scala/9780596801908/ch02s08.html)
+
+
+### import
+```scala
+import akka.actor._
+import java.util.{Map, HashMap}
+
+// rename import
+import java.math.BigInteger.{
+    ONE, TEN, ZERO => JAVAZERO
+}
+```
