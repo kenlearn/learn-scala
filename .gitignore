@@ -2,5 +2,5 @@
 *.log
 .idea
 out
-project
+target
 lib
