@@ -7,12 +7,6 @@ lazy val root = (project in file(".")).
       scalaVersion := "2.12.4",
       version      := "0.1.0"
     )),
-    name := "progsc2",
-    // mainClass in (Compile, run) := Some("ch01.Upper"),
-
-    libraryDependencies ++= Seq(
-      scalaTest,
-      akkaActor
-    )
+    name := "Cookbook",
+    libraryDependencies += scalaTest % Test
   )
-
