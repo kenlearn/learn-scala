@@ -1,6 +1,7 @@
 *.class
 *.log
 .idea
+.DS_store
 out
 target
 lib
