@@ -1,7 +1,8 @@
 package progscala2.concurrency.akka
 
-import akka.actor.{ActorRef, ActorSystem, Props}
+import akka.actor.{ActorRef, ActorSystem}
 import java.lang.{NumberFormatException => NFE}
+import akka.event.slf4j.Slf4jLogger
 
 object AkkaClient {
   import Messages._
@@ -99,7 +100,10 @@ object AkkaClient {
       |""".stripMargin
 
   private def exit(message: String, status: Int): Nothing = {
-      for(sys <- system) sys.shutdown()
+      for(sys <- system) {
+        println(s"Terminating ${sys.name}")
+        sys.terminate()
+      }
       println(message)
       sys.exit(status)
     }
