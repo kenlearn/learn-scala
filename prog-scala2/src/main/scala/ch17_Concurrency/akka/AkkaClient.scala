@@ -37,10 +37,10 @@ object AkkaClient {
     val charNumberRE = """^\s*(\w)\s+(\d+)\s*$""".r
     val charNumberStringRE = """^\s*(\w)\s+(\d+)\s+(.*)$""".r
 
-    def prompt() = print(">> ")
-    def missingActorNumber() =
+    def prompt(): Unit = print(">> ")
+    def missingActorNumber(): Unit=
         println("Crash command requires an actor number.")
-    def invalidInput(s: String) =
+    def invalidInput(s: String): Unit=
         println(s"Unrecognized command: ${s}")
     def invalidCommand(c: String): Unit =
         println(s"Expected 'c', 'r', 'u', 'd'. Got ${c}")
@@ -69,8 +69,8 @@ object AkkaClient {
       case charNumberRE(c, n) => c match {
         case "r" | "R" => server ! Read(n.toInt)
         case "d" | "D" => server ! Delete(n.toInt)
-        case "c" | "C" => expectedString
-        case "u" | "U" => expectedString
+        case "c" | "C" => expectedString()
+        case "u" | "U" => expectedString()
         case _ => invalidCommand(c)
       }
       case "q" | "quit" | "exit" => finished()
