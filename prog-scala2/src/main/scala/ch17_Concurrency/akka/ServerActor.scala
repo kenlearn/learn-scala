@@ -70,9 +70,8 @@ class ServerActor extends Actor with ActorLogging {
     println(s"<< ${message}")
   }
 
-  protected def makeWorker(i: Int) =
+  protected def makeWorker(i: Int): ActorRef =
     context.actorOf(Props[WorkerActor], s"worker-${i}")
-
 }
 
 object ServerActor {    // 9

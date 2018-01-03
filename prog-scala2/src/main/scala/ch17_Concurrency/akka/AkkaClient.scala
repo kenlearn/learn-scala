@@ -2,14 +2,14 @@ package progscala2.concurrency.akka
 
 import akka.actor.{ActorRef, ActorSystem}
 import java.lang.{NumberFormatException => NFE}
-import akka.event.slf4j.Slf4jLogger
+
 
 object AkkaClient {
   import Messages._
 
   private var system: Option[ActorSystem] = None
 
-  def main(args: Array[String]) = {
+  def main(args: Array[String]): Unit = {
       processArgs(args)
       val sys = ActorSystem("AkkaClient")
       system = Some(sys)
