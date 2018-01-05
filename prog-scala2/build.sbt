@@ -15,6 +15,7 @@ lazy val root = (project in file(".")).
       akkaActor,
       scalaAsync,
       akkaSlf4j,
+      slf4jSimple,
       logback
     )
   )

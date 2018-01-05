@@ -51,9 +51,9 @@ class ServerActor extends Actor with ActorLogging {
     case Response(Failure(ex)) => printResult(s"Error! ${ex}")
   }
 
-  def askHandler(prefix: String): PartialFunction[Try[Any], Unit] = {
+  def askHandler(prefix: String): PartialFunction[Try[Vector[Any]], Unit] = {
     case Success(suc) => suc match {
-      case vect: Vector[_] =>
+      case vect: Vector[Any] =>
         printResult(s"${prefix}\n")
         vect foreach {
           case Response(Success(message)) =>

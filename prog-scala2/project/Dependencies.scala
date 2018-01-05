@@ -13,4 +13,7 @@ object Dependencies {
   // https://mvnrepository.com/artifact/ch.qos.logback/logback-core
   lazy val logback = "ch.qos.logback" % "logback-core" % "1.2.3"
 
+  // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+  lazy val slf4jSimple = "org.slf4j" % "slf4j-simple" % "1.7.25"
+
 }
